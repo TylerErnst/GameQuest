@@ -87,6 +87,12 @@ const winnerList = [];
 // }
 
 
+// Adjust size of grid elements
+// gameBoard.style.height = `${window.innerWidth*.15}px`;
+// console.log(gameBoard.style.width)
+// console.log(Number(gameBoard.style.width.match(/\d+/))*1.25)
+// document.body.style.height = `${Number(gameBoard.style.width.match(/\d+/))*2}px`;
+// console.log(gameBoard.style.height)
 
 
 
@@ -106,8 +112,15 @@ for (const cell of gameBoard.children){
     // cell.innerHTML = cell.id;
     
     const cellNumber = Number(cell.id.match(/\d+/));
+    const cellPadding = `${window.innerWidth*.07}px 0`
+
+    cell.style.backgroundColor = '';
+    cell.style.padding = cellPadding;
     // if (cellNumber <= 5){
     //     cell.innerHTML = 'place'
+
+        
+        
 
     //     // Place piece
     //     setPlacementAvailability(cellNumber);
@@ -121,6 +134,8 @@ for (const cell of gameBoard.children){
     // if (6 <= cellNumber && cellNumber <= 35){
     //     // cell.innerHTML = 'score'
 
+    
+
     //     // Check for 5 in a row
     //     // If so, return winning color
     //     let check = checkFiveInARow(cellNumber)
@@ -129,6 +144,8 @@ for (const cell of gameBoard.children){
     //     }
         
     // }
+
+
     if (36 <= cellNumber && cellNumber <= 40){
         // cell.innerHTML = 'nope'
         if (cellNumber % 2){

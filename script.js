@@ -64,7 +64,7 @@ const player2 = {
     piecesRemaining: 15
 }
 
-const placeColor = '#FF10F0'; //Neon Pink
+const placeColor = 'rgb(255, 16, 240)'; //Neon Pink
 const shiftColorStep1 = '#0FFF50'; //Neon green
 const shiftColorStep2 = 'coral';
 

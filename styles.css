@@ -18,8 +18,13 @@
 }
 
 /* Non-scoring area */
-    .grid-container > *:nth-child(n+36){
-    filter: brightness(50%);
+.grid-container > *:nth-child(n+36){
+    filter: brightness(35%);
+    border-top: 10px solid white;
+}
+.grid-container > *:nth-child(n+41){
+    border-top: 5px solid black;
+    filter: brightness(65%);
 }
 
 /* Placement area */

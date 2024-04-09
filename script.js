@@ -273,6 +273,7 @@ function setShiftAvailability(cellNumber){
 }
 
 function setPlacementAvailability(){
+    if (currentPlayer.piecesRemaining == 0){return;}
     for (let i = 1; i <= 5; i++){
         if (checkPlacementAvailability(i)){
             document.getElementById('grid-item'+i).style.borderColor = 'hotpink'
@@ -282,7 +283,7 @@ function setPlacementAvailability(){
 }
 
 function checkPlacementAvailability(cellNumber){
-    if (!checkColumn(cellNumber+5) && currentPlayer.piecesRemaining != 0){
+    if (!checkColumn(cellNumber+5)){
         // Check cells
         for (let i = 0; i < 6; i++){
             const currentCellId = 'grid-item'+(cellNumber+30-(5*i));

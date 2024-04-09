@@ -64,6 +64,11 @@ const player2 = {
     piecesRemaining: 15
 }
 
+const placeColor = 'hotpink';
+const shiftColorStep1 = 'yellow';
+const shiftColorStep2 = 'coral';
+
+
 let currentPlayer = player1;
 let otherPlayer = player2;
 
@@ -213,7 +218,7 @@ function changePlayer(){
 function setOptions(){
     for (let i = 41; i <= 45; i++){
         if (document.getElementById('grid-item'+(i-10)) .style.backgroundColor != ''){
-            document.getElementById('grid-item'+i).style.borderColor = 'greenyellow';
+            document.getElementById('grid-item'+i).style.borderColor = shiftColorStep1;
         }
     }
     setPlacementAvailability();
@@ -247,6 +252,7 @@ function checkWinner(currentPlayer, otherPlayer, winnerList){
                 console.log('*************************************')
                 alert(`${otherPlayer.name} Wins!`);
             }, 0);
+            return otherPlayer;
         }
         console.log('winner check', win);
         return false;
@@ -269,14 +275,14 @@ function shiftColumnCells(column){
 
 function setShiftAvailability(cellNumber){
     cellNumber -= 40;
-    document.getElementById('grid-item'+(cellNumber)).style.borderColor = 'coral';
+    document.getElementById('grid-item'+(cellNumber)).style.borderColor = shiftColorStep2;
 }
 
 function setPlacementAvailability(){
     if (currentPlayer.piecesRemaining == 0){return;}
     for (let i = 1; i <= 5; i++){
         if (checkPlacementAvailability(i)){
-            document.getElementById('grid-item'+i).style.borderColor = 'hotpink'
+            document.getElementById('grid-item'+i).style.borderColor = placeColor;
         }
     }
     // console.log('done')
@@ -438,14 +444,14 @@ gameBoard.addEventListener("click", (event) => {
 
     // If existing piece
     // Shift piece step
-    if (event.target.style.borderColor === 'greenyellow'){
+    if (event.target.style.borderColor === shiftColorStep1){
         clearAvailability();
         setShiftAvailability(cellNumber);
         clearSelection(cellNumber);
         
     }
     // Click available spot
-    if (event.target.style.borderColor === 'coral'){
+    if (event.target.style.borderColor === shiftColorStep2){
         // console.log('shift');
         // event.target.innerHTML = 'shift';
 
@@ -462,7 +468,7 @@ gameBoard.addEventListener("click", (event) => {
 
     // If new piece
     // Place piece step
-    if (event.target.style.borderColor === 'hotpink'){
+    if (event.target.style.borderColor === placeColor){
         // console.log('place');
         // event.target.innerHTML = 'placed';
         // Place Piece

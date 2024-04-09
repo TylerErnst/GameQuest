@@ -108,6 +108,7 @@ console.log('remaining pieces',currentPlayerInfo.lastElementChild.innerHTML)
 currentPlayerInfo.style.display = 'grid';
 setOptions();
 
+// Set player 'colors'
 document.getElementById('player1').lastElementChild.style.backgroundColor = player1.color;
 document.getElementById('player2').lastElementChild.style.backgroundColor = player2.color;
 

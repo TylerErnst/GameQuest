@@ -65,8 +65,8 @@ const player2 = {
 }
 
 const placeColor = 'rgb(255, 16, 240)'; //Neon Pink
-const shiftColorStep1 = '#0FFF50'; //Neon green
-const shiftColorStep2 = 'coral';
+const shiftColorStep1 = 'rgb(15, 255, 80)'; //Neon Green
+const shiftColorStep2 = 'rgb(255, 95, 31)'; //Neon Orange
 
 
 let currentPlayer = player1;

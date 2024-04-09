@@ -17,18 +17,25 @@
     border: 5px solid black;
 }
 
+/* Seperator */
+.grid-container > .blank {
+    padding: 0px;
+    height: 0px;
+    border: 0px;
+}
+
 /* Non-scoring area */
-.grid-container > *:nth-child(n+36){
+.grid-container > .unava {
     filter: brightness(35%);
     border-top: 10px solid white;
 }
-.grid-container > *:nth-child(n+41){
+.grid-container > *:nth-child(n+46){
     border-top: 5px solid black;
     filter: brightness(65%);
 }
 
 /* Placement area */
-.grid-container > *:nth-child(-n+5){
+.grid-container > .avail{
     background-color: white;
 }
 

@@ -93,11 +93,11 @@ const winnerList = [];
 
 
 // Adjust size of grid elements
-// gameBoard.style.height = `${window.innerWidth*.15}px`;
-// console.log(gameBoard.style.width)
-// console.log(Number(gameBoard.style.width.match(/\d+/))*1.25)
-// document.body.style.height = `${Number(gameBoard.style.width.match(/\d+/))*2}px`;
-// console.log(gameBoard.style.height)
+
+gameBoard.style.height = `${.9 * innerHeight}px`;
+gameBoard.style.width = `${.5 * gameBoard.style.height.match(/\d+/)}px`;
+document.getElementById('player1').style.width = `${.5 * gameBoard.style.height.match(/\d+/)+10}px`;
+document.getElementById('player2').style.width = `${.5 * gameBoard.style.height.match(/\d+/)+10}px`;
 
 
 

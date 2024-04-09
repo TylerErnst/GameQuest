@@ -65,6 +65,7 @@ const player2 = {
 }
 
 let currentPlayer = player1;
+let otherPlayer = player2;
 
 
 const gameBoard = document.getElementById('gameBoard');
@@ -157,22 +158,33 @@ for (const cell of gameBoard.children){
 function changePlayer(){
     console.log('Changing player');
     let currentPlayerInfo = document.getElementById(currentPlayer.name);
+
+    //Hide current player
     currentPlayerInfo.style.display = 'none';
+
+    // Switch players
     if (currentPlayer == player1){
         currentPlayer = player2;
+        otherPlayer = player1;
         console.log('Changed to player 2');
     }else{
         currentPlayer = player1;
+        otherPlayer = player2;
         console.log('Changed to player 1');
     }
     currentPlayerInfo = document.getElementById(currentPlayer.name);
     // console.log(currentPlayerInfo)
     // console.log(currentPlayerInfo.lastChild)
+
+    // Show updated remaining pieces
     currentPlayerInfo.lastElementChild.innerHTML = currentPlayer.piecesRemaining;
-    console.log('remaining pieces',currentPlayerInfo.lastElementChild.innerHTML)
+    console.log('remaining pieces',currentPlayerInfo.lastElementChild.innerHTML);
+
+    // Show current player
     currentPlayerInfo.style.display = 'grid';
     setOptions();
 }
+
 
 function setOptions(){
     for (let i = 41; i <= 45; i++){
@@ -193,7 +205,7 @@ function setOptions(){
 
 //Check for winner
 //If multiple 5 in a rows created, player that just played wins
-function checkWinner(currentPlayer, winnerList){
+function checkWinner(currentPlayer, otherPlayer, winnerList){
     checkBoard();
     winnerList.forEach(win => {
 
@@ -206,6 +218,11 @@ function checkWinner(currentPlayer, winnerList){
                 alert(`${currentPlayer.name} Wins!`);
             }, 0);
             return currentPlayer;
+        }else if (win == otherPlayer.color){
+            setTimeout(() => {
+                console.log('*************************************')
+                alert(`${otherPlayer.name} Wins!`);
+            }, 0);
         }
         console.log('winner check', win);
         return false;
@@ -413,7 +430,7 @@ gameBoard.addEventListener("click", (event) => {
         shiftColumnCells(cellNumber);
         clearAvailability();
         console.log(winnerList);
-        checkWinner(currentPlayer,winnerList);
+        checkWinner(currentPlayer, otherPlayer, winnerList);
         changePlayer();
     }else
 
@@ -433,7 +450,7 @@ gameBoard.addEventListener("click", (event) => {
         // console.log('pieces left:',currentPlayer.piecesRemaining)
         clearAvailability();
         console.log(winnerList);
-        checkWinner(currentPlayer,winnerList);
+        checkWinner(currentPlayer, otherPlayer, winnerList);
         changePlayer();
     }
 

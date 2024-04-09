@@ -1,0 +1,44 @@
+/* Main grid properties */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    /* gap: 2px; */
+    background-color: black;
+    padding: 10px;
+}
+
+/* Base properties of each cell */
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    border: 5px solid black;
+}
+
+/* Non-scoring area */
+    .grid-container > *:nth-child(n+36){
+    filter: brightness(50%);
+}
+
+/* Placement area */
+.grid-container > *:nth-child(-n+5){
+    background-color: white;
+}
+
+.player {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.pieces, .player {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 30px;
+    border: 5px solid black;
+}
+
+#player1, #player2 {
+    display: none;
+}

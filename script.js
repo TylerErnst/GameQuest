@@ -55,13 +55,13 @@
 const player1 = {
     name: 'player1',
     color: 'red',
-    piecesRemaining: 20
+    piecesRemaining: 15
 }
 
 const player2 = {
     name: 'player2',
     color: 'blue',
-    piecesRemaining: 20
+    piecesRemaining: 15
 }
 
 let currentPlayer = player1;

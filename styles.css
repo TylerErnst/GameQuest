@@ -23,6 +23,12 @@
     background-image: -ms-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
 }
 
+/* Placement area */
+.grid-container > .place {
+    box-shadow: none;
+    background-color: white;
+}
+
 /* Seperator */
 .grid-container > .blank {
     padding: 0px;

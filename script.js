@@ -237,27 +237,36 @@ function setOptions(){
 //If multiple 5 in a rows created, player that just played wins
 function checkWinner(currentPlayer, otherPlayer, winnerList){
     checkBoard();
+    let currentWin = false;
+    let otherWin = false;
     winnerList.forEach(win => {
 
         // Is the current player on the win list?
         console.log('win',win)
         console.log('currentplayer',currentPlayer.color)
         if (win == currentPlayer.color){
-            setTimeout(() => {
-                console.log('*************************************')
-                alert(`${currentPlayer.name} Wins!`);
-            }, 0);
-            return currentPlayer;
+            currentWin = true;
         }else if (win == otherPlayer.color){
-            setTimeout(() => {
-                console.log('*************************************')
-                alert(`${otherPlayer.name} Wins!`);
-            }, 0);
-            return otherPlayer;
+            otherWin = true;
         }
         console.log('winner check', win);
-        return false;
     });
+    console.log('currentWin',currentWin);
+    console.log('otherWin',otherWin);
+    if (currentWin){
+        setTimeout(() => {
+            console.log('*************************************')
+            alert(`${currentPlayer.name} Wins!`);
+        }, 0);
+        return currentPlayer;
+    }else if (otherWin){
+        setTimeout(() => {
+            console.log('*************************************')
+            alert(`${otherPlayer.name} Wins!`);
+        }, 0);
+        return otherPlayer;
+    }
+    return false;
 }
 
 function shiftColumnCells(column){

@@ -112,10 +112,17 @@ for (const cell of gameBoard.children){
     // cell.innerHTML = cell.id;
     
     const cellNumber = Number(cell.id.match(/\d+/));
-    const cellPadding = `${window.innerWidth*.07}px 0`
+
+
+    // const cellPadding = `${window.innerWidth*.07}px 0`
+    // if (cellPadding > window.innerHeight+100){
+    //     cellPadding = window.innerHeight/1000
+    // }
+    // cell.style.padding = cellPadding;
 
     cell.style.backgroundColor = '';
-    cell.style.padding = cellPadding;
+    
+
     // if (cellNumber <= 5){
     //     cell.innerHTML = 'place'
 

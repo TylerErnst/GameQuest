@@ -65,7 +65,7 @@ const player2 = {
 }
 
 const placeColor = 'hotpink';
-const shiftColorStep1 = 'yellow';
+const shiftColorStep1 = '#0FFF50'; //Neon green
 const shiftColorStep2 = 'coral';
 
 

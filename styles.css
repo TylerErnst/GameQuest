@@ -1,16 +1,24 @@
+body{
+    background-color: rgb(50, 50, 50);
+    background-image: url("boris-misevic-su5TYVAf1xM-unsplash.jpg");
+}
+
 /* Main grid properties */
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     gap: 5px;
+    background-image: url("solid-dark-wood-grain-texture-free.jpg");
     background-color: black;
     padding: 10px;
     /* height: 90vh; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Base properties of each cell */
 .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, );
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
@@ -26,7 +34,7 @@
 /* Placement area */
 .grid-container > .place {
     box-shadow: none;
-    background-color: white;
+    background-color: rgba(0, 0, 0, .7);
 }
 
 /* Seperator */
@@ -66,4 +74,8 @@
 
 #player1, #player2 {
     display: none;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: rgba(0,0,0,.5);
 }

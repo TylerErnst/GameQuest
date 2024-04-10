@@ -55,8 +55,10 @@
 
 
 // Colors
-const colorPlayer1 = 'rgb(255,8,0)'; //Candy Apple Red
-const colorPlayer2 = 'rgb(0,127,255)'; //Azure
+// Player colors must be names
+const colorPlayer1 = 'red';
+const colorPlayer2 = 'mediumblue';
+// These can not be hex
 const placeColor = 'rgb(255, 16, 240)'; //Neon Pink
 const shiftColorStep1 = 'rgb(15, 255, 80)'; //Neon Green
 const shiftColorStep2 = 'rgb(255, 95, 31)'; //Neon Orange

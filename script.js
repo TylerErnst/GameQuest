@@ -52,21 +52,28 @@
 // Check for win conditions
 // next turn
 
+
+
+// Colors
+const colorPlayer1 = 'rgb(255,8,0)'; //Candy Apple Red
+const colorPlayer2 = 'rgb(0,127,255)'; //Azure
+const placeColor = 'rgb(255, 16, 240)'; //Neon Pink
+const shiftColorStep1 = 'rgb(15, 255, 80)'; //Neon Green
+const shiftColorStep2 = 'rgb(255, 95, 31)'; //Neon Orange
+
 const player1 = {
     name: 'player1',
-    color: 'red',
+    color: colorPlayer1,
     piecesRemaining: 15
 }
 
 const player2 = {
     name: 'player2',
-    color: 'blue',
+    color: colorPlayer2,
     piecesRemaining: 15
 }
 
-const placeColor = 'rgb(255, 16, 240)'; //Neon Pink
-const shiftColorStep1 = 'rgb(15, 255, 80)'; //Neon Green
-const shiftColorStep2 = 'rgb(255, 95, 31)'; //Neon Orange
+
 
 
 let currentPlayer = player1;
@@ -94,7 +101,7 @@ const winnerList = [];
 
 // Adjust size of grid elements
 
-gameBoard.style.height = `${.9 * innerHeight}px`;
+gameBoard.style.height = `${.95 * innerHeight-75}px`;
 gameBoard.style.width = `${.5 * gameBoard.style.height.match(/\d+/)}px`;
 document.getElementById('player1').style.width = `${.5 * gameBoard.style.height.match(/\d+/)+10}px`;
 document.getElementById('player2').style.width = `${.5 * gameBoard.style.height.match(/\d+/)+10}px`;
@@ -498,34 +505,10 @@ gameBoard.addEventListener("click", (event) => {
 });
 
 
-
-
-
-// for (const cell of gameBoard.children){
-//     cell.innerHTML = cell.className;
-//     const cellNumber = Number(cell.className.match(/\d+/));
-//     if (cellNumber <= 5){
-//         cell.innerHTML = 'place'
-//     }
-//     if (5 < cellNumber && cellNumber <= 35){
-//         cell.innerHTML = 'score'
-
-//         //Diagoinal logic
-//         switch (cellNumber){
-//             case 6:
-//             case 10:
-//             case 11:
-//             case 15:
-//                 cell.innerHTML = "dia"
-                
-//         }
-        
-//     }
-//     if (35 < cellNumber && cellNumber <= 40){
-//         cell.innerHTML = 'nope'
-//     }
-//     if (cellNumber > 40){
-//         cell.innerHTML = 'choose'
-//     }
- 
-// }
+// Can be buggy
+addEventListener("resize", (event) => {
+    gameBoard.style.height = `${.95 * innerHeight-75}px`;
+    gameBoard.style.width = `${.5 * gameBoard.style.height.match(/\d+/)}px`;
+    document.getElementById('player1').style.width = `${.5 * gameBoard.style.height.match(/\d+/)+10}px`;
+    document.getElementById('player2').style.width = `${.5 * gameBoard.style.height.match(/\d+/)+10}px`;
+});
